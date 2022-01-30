@@ -1,0 +1,39 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: datetime-app
+  labels:
+    app: datetime
+spec:
+  containers:
+  - name: datetime-app
+    image: konsloiz/datetime:v4.0
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: datetime-service
+spec:
+  type: ClusterIP
+  selector:
+    app: datetime
+  ports:
+  # Default port used by the image
+  - port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: datetime-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: datetime-service
+            port:
+              number: 8080
+---

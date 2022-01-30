@@ -54,7 +54,16 @@ Open a bash terminal inside the cloned repo parent folder, and execute the follo
 bash ./deploy.sh
 ```
 
-The script will automatically create a kind cluster, deploy an ingress controller, deploy the application and perform health check for the /now and /simple endpoints.
+The script will automatically create a kind cluster, deploy an ingress controller, deploy the application, expose it, and perform health check for the /now and /simple endpoints.
+
+The application is now available under threse endpoints:
+
+1. http://localhost/now
+
+2. http://localhost/now/simple
+
+3. http://localhost/swagger-ui/index.html
+
 
 To clean up everything safely, open a bash terminal inside the cloned repo parent folder, and execute the following command:
 

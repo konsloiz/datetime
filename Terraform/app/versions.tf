@@ -11,4 +11,5 @@ terraform {
 
 provider "kubernetes" {
   config_path    = var.kind_cluster_config_path
+  config_context = var.kind_cluster_config_context
 }

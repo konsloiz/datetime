@@ -1,5 +1,5 @@
 # datetime
-A simple containerized service to get the current date &amp; time
+A simple containerized service to get the current UTC date &amp; time
 
 ## Task Overview 
 

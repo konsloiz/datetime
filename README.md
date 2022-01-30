@@ -38,7 +38,59 @@ docker ps
 docker stop "CONTAINER ID here"
 ```
 
-## Deploying the app
+## Creating a kind cluster and deploying the app
+
+Please clone the repo by executing the following command:
+
+```
+git clone https://github.com/konsloiz/datetime.git
+```
+
+The easiest way to create the cluster and deploy the app is by running the [deploy.sh](https://github.com/konsloiz/datetime/blob/main/deploy.sh) script.
+
+Open a bash terminal inside the cloned repo parent folder, and execute the following command:
+
+```
+bash ./deploy.sh
+```
+
+The script will automatically create a kind cluster, deploy an ingress controller, deploy the application and perform health check for the /now and /simple endpoints.
+
+To clean up everything safely, open a bash terminal inside the cloned repo parent folder, and execute the following command:
+
+```
+bash ./destroy.sh
+```
+
+To manually deploy the cluster and the ingress controller deployment:
+
+```
+cd /Terraform/k8s
+terraform init
+terraform apply -auto-approve
+```
+To manually deploy the application in the cluster:
+
+```
+cd Terraform/app
+terraform init
+terraform apply -auto-approve
+```
+
+## Performing a health check
+
+To manually perform a health check for the service, you can run the [health_check.py script](https://github.com/konsloiz/datetime/blob/main/health_check.py) passing as an argument the url that you want to check.
+
+Example 1:
+```
+python3 health_check.py --url http://localhost/now
+```
+
+Example 2:
+```
+python3 health_check.py --url http://localhost/now/simple
+```
+
 
 ## Task Documentation
 

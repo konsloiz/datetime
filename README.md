@@ -104,3 +104,7 @@ python3 health_check.py --url http://localhost/now/simple
 ## Task Documentation
 
 The documentation of the task is included [here](https://github.com/konsloiz/datetime/blob/main/DOCUMENTATION.md).
+
+## Future improvements
+
+To completely automate this process, I would consider setting up a GitHub action.

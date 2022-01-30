@@ -107,4 +107,6 @@ The documentation of the task is included [here](https://github.com/konsloiz/dat
 
 ## Future improvements
 
-To completely automate this process, I would consider setting up a GitHub action.
+To completely automate this process, I would consider setting up a GitHub action. Usually infrastructure and deployment are happening as seperate steps. So a GitHub action scenario could include the following actions in an already created infra:
+
+The source code in the master branch is updated -> The docker image gets build and pushed to Docker Hub -> The application deployment is updated it with the new version.

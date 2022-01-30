@@ -6,7 +6,7 @@
 
 > Solution
 
-A simple SpringBoot application was developed. The application includes one Rest Controller with two GET methods. The first one returns under /now a string of the local UTC datetime in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard format. The second one returns under /now/simple a sting of the local UTC datetime in a simpler format. Additionally, are included a simple test case to check the health status of the two endpoints and Swagger UI under swagger-ui/index.html for documentation purposes.
+A simple SpringBoot application was developed. The application includes one Rest Controller with two GET methods. The first one returns under /now a string of the local UTC datetime in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard format. The second one returns under /now/simple a sting of the local UTC datetime in a simpler format. Additionally, are included a simple test case to check the health status of the two endpoints and Swagger UI under swagger-ui/index.html for REST API documentation purposes.
 
 The application was then built into a jar file. Then a Dockerfile was created to containerize the service. Inside the Dockerfile the jar is copied, a non-root user is specified to run the image, port 8080 is exposed and in the end the entrypoint is set to start the app.
 

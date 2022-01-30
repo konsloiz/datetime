@@ -88,7 +88,7 @@ terraform apply -auto-approve
 
 ## Performing a health check
 
-To manually perform a health check for the service, you can run the [health_check.py script](https://github.com/konsloiz/datetime/blob/main/health_check.py) passing as an argument the url that you want to check.
+To perform a health check for the service, you can run the [health_check.py script](https://github.com/konsloiz/datetime/blob/main/health_check.py) passing as an argument the url that you want to check.
 
 Example 1:
 ```

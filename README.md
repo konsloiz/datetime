@@ -56,7 +56,7 @@ bash ./deploy.sh
 
 The script will automatically create a kind cluster, deploy an ingress controller, deploy the application, expose it, and perform health check for the /now and /simple endpoints.
 
-The application is now available under threse endpoints:
+The application is now available under these endpoints:
 
 1. http://localhost/now
 

@@ -7,7 +7,36 @@ Create a small web service, in the language of your choice, which provides the c
 
 ## Requirements
 
+| Requirements | Link                                            |
+|--------------|-------------------------------------------------|
+| Docker       | https://www.docker.com/products/docker-desktop  |
+| Bash         | https://en.wikipedia.org/wiki/Bash_(Unix_shell) |
+| Python3      | https://www.python.org/download/releases/3.0/   |
+| kind         | https://kind.sigs.k8s.io/docs/user/quick-start/ |
+| Terraform    | https://www.terraform.io/downloads              |
+
 ## Running the app
+
+If you want to test the application you can simple run the docker container by applying the following command:
+
+```
+docker run -d -p8080:8080 konsloiz/datetime:v4.0
+```
+
+When the command is sucssefully executed, open any browser and visit the following endpoints:
+
+1. http://localhost:8080/now - To get the UTC datetime in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard format.
+
+2. http://localhost:8080/now/simple - To get the UTC datetime in a simple format.
+
+3. http://localhost:8080/swagger-ui/index.html - To get the Swagger UI with the REST API documentation.
+
+To stop the application:
+
+```
+docker ps
+docker stop "CONTAINER ID here"
+```
 
 ## Deploying the app
 

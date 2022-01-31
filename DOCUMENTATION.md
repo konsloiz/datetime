@@ -24,14 +24,14 @@ The Terraform Kubernetes provider is missing the depends_on functionality. This 
 
     - A [custom terraform provider](https://github.com/kyma-incubator/terraform-provider-kind) was used to create the new cluster.
     - The nginx ingress controller is deployed to the cluster via a helm chart
-    - A custom resource is used to kubectl wait for the ingress controller to become ready
+    - A null_resource resource is used to kubectl wait for the ingress controller to become ready
 
 
 2. Deploying the app to the kind cluster:
 
     - The deployment is split in two modules, the app-deployment and the app-ingress
     - Initially the pod and its service are deployed to the cluster
-    - The the second module (depends_on the first module) is responsible to create the application-ingress in order to expose it outside the cluster
+    - Then the second module (depends_on the first module) is responsible to create the application-ingress in order to expose it outside the cluster
  
 
 Additionally a Kubernetes yaml file for the application was developed to enable the deployment to any cluster independently from Terraform.

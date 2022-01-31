@@ -60,4 +60,4 @@ Two bash scripts were developed to automate the whole process:
 
 1. The deploy.sh is responsible to create the kind cluster, install the nginx-ingress controller, deploy the datetime application to the cluster and perform a health check of the /now and /now/simple endpoints.
 
-2. The destroy.sh is responsible to safely delete clean everything.
+2. The destroy.sh is responsible to safely delete everything.

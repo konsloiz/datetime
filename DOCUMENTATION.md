@@ -45,7 +45,7 @@ Additionally a Kubernetes yaml file for the application was developed to enable 
 A python script was developed. The script takes as an argument the url of the service that we want to check, and performs a request and initiates the following checks:
 
 1. Checks if the status code of the app is 200
-2. Compares the difference of the local UTC time with the response from the url and checks if time is desyncronized for more than (>5) seconds.
+2. Compares the difference of the local UTC time with the response from the url and checks if time is desynchronized for more than (>) 5 seconds.
 
 Everything is logged in both stdout and a log file.
 

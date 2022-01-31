@@ -23,7 +23,7 @@ If you want to test the application you can simple run the docker container by a
 docker run -d -p8080:8080 konsloiz/datetime:v4.0
 ```
 
-When the command is sucssefully executed, open any browser and visit the following endpoints:
+If you want to test the application you can simply run the docker container by applying the following command:
 
 1. http://localhost:8080/now - To get the UTC datetime in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard format.
 
@@ -54,7 +54,7 @@ Open a bash terminal inside the cloned repo parent folder, and execute the follo
 bash ./deploy.sh
 ```
 
-The script will automatically create a kind cluster, deploy an ingress controller, deploy the application, expose it, and perform health check for the /now and /simple endpoints.
+The script will automatically create a kind cluster, deploy an ingress controller, deploy the application, expose it, and perform a health check for the /now and /simple endpoints.
 
 The application is now available under these endpoints:
 
@@ -107,6 +107,6 @@ The documentation of the task is included [here](https://github.com/konsloiz/dat
 
 ## Future improvements
 
-To completely automate this process, I would consider setting up a GitHub action. Usually infrastructure and deployment are happening as seperate steps. So a GitHub action scenario could include the following actions in an already created infra:
+To completely automate this process, I would consider setting up a GitHub action. Usually, infrastructure and deployment are happening as separate steps. So a GitHub action scenario could include the following actions in an already created infra:
 
-The source code in the master branch is updated -> The docker image gets build and pushed to Docker Hub -> The application deployment is updated it with the new version.
+The source code in the master branch is updated -> The docker image gets built and pushed to Docker Hub -> The application deployment is updated with the new version.

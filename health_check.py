@@ -29,7 +29,7 @@ args = parser.parse_args()
 
 def health_check(url):
 
-    """Check is the datetime service is running and if clock is desynchronized.
+    """Check if the datetime service is running and if clock is desynchronized.
 
     Args:
         url (str): The url to perform health check

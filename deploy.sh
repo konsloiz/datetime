@@ -9,7 +9,7 @@ echo "Creating a kind cluster"
 terraform init
 terraform apply -auto-approve
 
-echo "The installtion of the kind cluster is complete"
+echo "The installation of the kind cluster is complete"
 
 echo "Deploying the datetime application"
 
@@ -18,7 +18,7 @@ cd ../app
 terraform init
 terraform apply -auto-approve
 
-echo "The installtion of the datetime application is complete"
+echo "The installation of the datetime application is complete"
 
 cd ..
 

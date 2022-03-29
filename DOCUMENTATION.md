@@ -24,14 +24,14 @@ The Terraform Kubernetes provider is missing the depends_on functionality. This 
 
     - A [custom terraform provider](https://github.com/kyma-incubator/terraform-provider-kind) was used to create the new cluster.
     - The nginx ingress controller is deployed to the cluster via a helm chart
-    - A custom resource is used to kubectl wait for the ingress controller to become ready
+    - A null_resource resource is used to kubectl wait for the ingress controller to become ready
 
 
 2. Deploying the app to the kind cluster:
 
     - The deployment is split in two modules, the app-deployment and the app-ingress
     - Initially the pod and its service are deployed to the cluster
-    - The the second module (depends_on the first module) is responsible to create the application-ingress in order to expose it outside the cluster
+    - Then the second module (depends_on the first module) is responsible to create the application-ingress in order to expose it outside the cluster
  
 
 Additionally a Kubernetes yaml file for the application was developed to enable the deployment to any cluster independently from Terraform.
@@ -45,7 +45,7 @@ Additionally a Kubernetes yaml file for the application was developed to enable 
 A python script was developed. The script takes as an argument the url of the service that we want to check, and performs a request and initiates the following checks:
 
 1. Checks if the status code of the app is 200
-2. Compares the difference of the local UTC time with the response from the url and checks if time is desyncronized for more than (>5) seconds.
+2. Compares the difference of the local UTC time with the response from the url and checks if time is desynchronized for more than (>) 5 seconds.
 
 Everything is logged in both stdout and a log file.
 
@@ -60,4 +60,4 @@ Two bash scripts were developed to automate the whole process:
 
 1. The deploy.sh is responsible to create the kind cluster, install the nginx-ingress controller, deploy the datetime application to the cluster and perform a health check of the /now and /now/simple endpoints.
 
-2. The destroy.sh is responsible to safely delete clean everything.
+2. The destroy.sh is responsible to safely delete everything.
